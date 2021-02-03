@@ -9,13 +9,23 @@ class PostList extends React.Component{
         this.props.fetchPosts();
 
     }
+    renderPost(){
+        return this.props.posts.map(post => {
+             return (
+             <div key={post.id}>
+                 <h1>{post.title}</h1>
+                 <p>{post.body}</p>
+             </div>
+             );
+         })
+     }
 
     render(){
         console.log(this.props.posts)
         return(
             <div>
+               <h1>{}</h1>
                
-                <h1>Post List</h1>
             </div>
         );
     }
